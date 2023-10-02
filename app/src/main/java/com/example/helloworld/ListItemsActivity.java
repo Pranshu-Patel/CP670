@@ -50,7 +50,9 @@ public class ListItemsActivity extends AppCompatActivity {
         switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String message = isChecked ? "Switch is On" : "Switch is Off";
+                String onSwitch = getString(R.string.onSwitch);
+                String offSwitch = getString(R.string.offSwitch);
+                String message = isChecked ? onSwitch : offSwitch;
                 int duration = isChecked ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG;
                 Toast.makeText(ListItemsActivity.this, message, duration).show();
             }
@@ -72,6 +74,8 @@ public class ListItemsActivity extends AppCompatActivity {
                                     Intent resultIntent = new Intent();
                                     resultIntent.putExtra("Response", "Here is my response");
                                     setResult(Activity.RESULT_OK, resultIntent);
+                                    String clickedYesToast = getString(R.string.clickedYesToast);
+                                    print(clickedYesToast);
                                     finish();
                                 }
                             })

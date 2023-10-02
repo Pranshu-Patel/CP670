@@ -15,5 +15,12 @@
     <string name="dialog_title">Alert!</string>
     <string name="ok">Yes</string>
     <string name="cancel">No</string>
+    <string name="onSwitch">Switch is ON</string>
+    <string name="offSwitch">Switch is OFF</string>
+    <string name="clickedYesToast">User clicked YES</string>
+    <string name="emptyPassword">Password cannot be empty</string>
+    <string name="invalidEmail">Email is invalid</string>
+    <string name="welcome">Welcome!</string>
+
 
 </resources>

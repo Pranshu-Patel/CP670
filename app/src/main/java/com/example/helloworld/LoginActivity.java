@@ -15,6 +15,9 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public void print(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
     public void clickHandler(View view) {
         // Get the email and password EditText views
         EditText emailEditText = findViewById(R.id.login_email);
@@ -27,15 +30,19 @@ public class LoginActivity extends AppCompatActivity {
         // Validate the email and password
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             // Show an error message for invalid email
+            String invalidEmail = getString(R.string.invalidEmail);
+            print(invalidEmail);
             Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
         }
         else if (password.isEmpty()) {
             // Show an error message for empty password
-            Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
+            String emptyPassword = getString(R.string.emptyPassword);
+            print(emptyPassword);
         }
         else {
             saveData();
-
+            String welcome = getString(R.string.welcome);
+            print(welcome);
             Toast.makeText(LoginActivity.this,"Welcome!",Toast.LENGTH_SHORT).show();
 
             // Call startActivity() with your assignment 1 MainActivity as the next Activity to start
