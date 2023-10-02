@@ -14,19 +14,23 @@
         android:text="@string/radio_button"/>
 
     <CheckBox
+        android:id="@+id/checkbox1"
         android:layout_columnWeight="1"
         android:gravity="fill"
         android:text="@string/checkbox"/>
 
     <Switch
+        android:id="@+id/switch1"
         android:layout_columnWeight="1"
         android:gravity="fill"
         android:text="@string/what_does_this_do" />
 
     <ImageButton
+        android:id="@+id/imageButton"
         android:layout_columnWeight="1"
         android:gravity="fill"
         android:src="@android:drawable/ic_menu_camera"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo"/>
+        <!--android:onClick="clickHandler"-->
 
 </GridLayout>

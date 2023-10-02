@@ -10,4 +10,10 @@
     <string name="radio_button">RadioButton</string>
     <string name="todo">TODO</string>
     <string name="what_does_this_do">What does this do?</string>
+    <string name="send_button">Login</string>
+    <string name="dialog_message">Do you want to Finish this Activity?</string>
+    <string name="dialog_title">Alert!</string>
+    <string name="ok">Yes</string>
+    <string name="cancel">No</string>
+
 </resources>
