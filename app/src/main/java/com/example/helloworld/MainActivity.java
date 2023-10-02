@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button tempButton;
 
     String logText = "MainActivity :";
     @Override
@@ -35,30 +34,30 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onResume() {
         super.onResume();
-        Log.i("resume","onResume");
+        Log.i(logText,"onResume() encountered.");
     }
 
 
     protected void onPause() {
         super.onPause();
-        Log.i("pause","onPause");
+        Log.i(logText,"onPause() encountered.");
     }
 
 
     protected void onStart() {
         super.onStart();
-        Log.i("start","onStart");
+        Log.i(logText,"onStart() encountered.");
     }
 
 
     protected void onStop() {
         super.onStop();
-        Log.i("stop","onStop");
+        Log.i(logText,"onStop() encountered.");
     }
 
 
     protected void onDestroy() {
         super.onDestroy();
-        Log.i("destroy","onDestroy");
+        Log.i(logText,"onDestroy() encountered.");
     }
 }

@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class ListItemsActivity extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 10;
-    private ImageButton mImageButton;
+    private ImageButton imageButton;
     private Switch switchButton;
     private CheckBox checkBox;
     String logText = "ListItemsActivity :";
@@ -32,31 +32,18 @@ public class ListItemsActivity extends AppCompatActivity {
 
         Log.i(logText,"onCreate() encountered");
         // Find the ImageButton view
-        //mImageButton = findViewById(R.id.imageButton);
+        imageButton = findViewById(R.id.imageButton);
 
-        // Set the onClick listener for the ImageButton
-        //mImageButton.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View b) {
-                // Create an Intent to launch the phone's default photo application
-        //        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                    // Start the activity with the REQUEST_IMAGE_CAPTURE request code
-        //            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        //        }
-        //    }
-        //});
-
-        mImageButton = findViewById(R.id.imageButton);
-        mImageButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                        startActivityForResult(intent,REQUEST_IMAGE_CAPTURE);
-                    }
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
                 }
-        );
+            }
+        });
+
 
         switchButton = findViewById(R.id.switch1);
         print("Switch Button");
@@ -69,7 +56,7 @@ public class ListItemsActivity extends AppCompatActivity {
             }
         });
 
-        CheckBox checkBox = findViewById(R.id.checkbox1);
+        checkBox = findViewById(R.id.checkbox1);
 
         print("CheckBox");
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -103,12 +90,6 @@ public class ListItemsActivity extends AppCompatActivity {
 
     }
 
-    /*public void clickHandler(View view) {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //takePictureIntent.putExtra("android.intent.extras.CAMERA_FACING",1);
-        startActivityForResult(takePictureIntent,REQUEST_IMAGE_CAPTURE);
-    }*/
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -119,7 +100,7 @@ public class ListItemsActivity extends AppCompatActivity {
             Bitmap imageBitmap = (Bitmap) extras.get("data");
 
             // Set the image bitmap to the ImageButton
-            mImageButton.setImageBitmap(imageBitmap);
+            imageButton.setImageBitmap(imageBitmap);
 
         }
 
@@ -134,5 +115,34 @@ public class ListItemsActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
+    protected void onResume() {
+        super.onResume();
+        Log.i(logText,"onResume() encountered.");
+    }
+
+
+    protected void onPause() {
+        super.onPause();
+        Log.i(logText,"onPause() encountered.");
+    }
+
+
+    protected void onStart() {
+        super.onStart();
+        Log.i(logText,"onStart() encountered.");
+    }
+
+
+    protected void onStop() {
+        super.onStop();
+        Log.i(logText,"onStop() encountered.");
+    }
+
+
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(logText,"onDestroy() encountered.");
+    }
 
 }
+

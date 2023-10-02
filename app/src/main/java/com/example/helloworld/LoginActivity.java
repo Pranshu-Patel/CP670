@@ -25,37 +25,38 @@ public class LoginActivity extends AppCompatActivity {
         String password = passwordEditText.getText().toString();
 
         // Validate the email and password
-        if (!email.isEmpty() || android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             // Show an error message for invalid email
-            saveData();
-            Toast.makeText(LoginActivity.this,"Welcome!",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
         }
-        /*else if (password.isEmpty()) {
+        else if (password.isEmpty()) {
             // Show an error message for empty password
             Toast.makeText(this, "Password cannot be empty", Toast.LENGTH_SHORT).show();
-        }*/
+        }
         else {
-            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
+            saveData();
+
+            Toast.makeText(LoginActivity.this,"Welcome!",Toast.LENGTH_SHORT).show();
+
+            // Call startActivity() with your assignment 1 MainActivity as the next Activity to start
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
 
         }
     }
 
     private void loadData() {
         EditText emailEditText = findViewById(R.id.login_email);
-        //String updatedEmail = emailEditText.getText().toString();
 
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String defaultEmail = sharedPreferences.getString("DefaultEmail", "email@domain.com");
-        //((EditText) findViewById(R.id.login_email).setText(defaultEmail));
         emailEditText.setText(defaultEmail);
     }
 
     public void saveData() {
         EditText emailEditText = findViewById(R.id.login_email);
 
+        // Store the text in the login email field to the SharedPreferences of your application
         SharedPreferences.Editor editor = getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
         editor.putString("DefaultEmail", emailEditText.getText().toString());
         editor.apply();
@@ -67,8 +68,6 @@ public class LoginActivity extends AppCompatActivity {
         setTitle("Assignment 2 CP670");
         setContentView(R.layout.activity_login);
 
-        //TextView textview = findViewById(R.id.login_email);
-        //textview.setText("LoginActivity");
         loadData();
         Log.i(logText,"onCreate() encountered.");
 
@@ -81,20 +80,6 @@ public class LoginActivity extends AppCompatActivity {
         // Set the initial text of the login email field
         loginEmail.setText(email);
 
-        /*loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                    // Store the text in the login email field to the SharedPreferences of your application
-                    SharedPreferences.Editor editor = getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
-                    editor.putString("DefaultEmail", loginEmail.getText().toString());
-                    editor.apply();
-
-                    // Call startActivity() with your assignment 1 MainActivity as the next Activity to start
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-            }
-        });*/
     }
     String logText = "LoginActivity :";
     @Override
@@ -122,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         // Disconnect from database or other services here
-        Log.i(logText,"onResume() encountered.");
+        Log.i(logText,"onStop() encountered.");
     }
 
     @Override
