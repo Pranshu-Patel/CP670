@@ -41,9 +41,6 @@ public class LoginActivity extends AppCompatActivity {
         }
         else {
             saveData();
-            String welcome = getString(R.string.welcome);
-            print(welcome);
-            Toast.makeText(LoginActivity.this,"Welcome!",Toast.LENGTH_SHORT).show();
 
             // Call startActivity() with your assignment 1 MainActivity as the next Activity to start
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);

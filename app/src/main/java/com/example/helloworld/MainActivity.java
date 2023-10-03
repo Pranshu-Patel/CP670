@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -25,6 +26,19 @@ public class MainActivity extends AppCompatActivity {
         Log.i(logText,"onCreate() encountered.");
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        //String temp = "My information to share";
+        if (requestCode == 10 && resultCode == Activity.RESULT_OK) {
+            String messagePassed = data.getStringExtra("Response");
+            String toastMessage = "ListItemsActivity passed: " + messagePassed;
+            Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     public void clickHandler(View view) {
         Intent intent = new Intent(MainActivity.this,ListItemsActivity.class);

@@ -30,6 +30,11 @@ public class ListItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_items);
 
+
+        Intent intent = new Intent(ListItemsActivity.this, MainActivity.class);
+        intent.putExtra("Response", "My information to share");
+        setResult(Activity.RESULT_OK, intent);
+
         Log.i(logText,"onCreate() encountered");
         // Find the ImageButton view
         imageButton = findViewById(R.id.imageButton);
@@ -91,7 +96,6 @@ public class ListItemsActivity extends AppCompatActivity {
         });
 
 
-
     }
 
     @Override
@@ -105,7 +109,6 @@ public class ListItemsActivity extends AppCompatActivity {
 
             // Set the image bitmap to the ImageButton
             imageButton.setImageBitmap(imageBitmap);
-
         }
 
         if (requestCode == 10 && resultCode == Activity.RESULT_OK) {

@@ -31,6 +31,5 @@
         android:gravity="fill"
         android:src="@android:drawable/ic_menu_camera"
         android:contentDescription="@string/todo"/>
-        <!--android:onClick="clickHandler"-->
 
 </GridLayout>
