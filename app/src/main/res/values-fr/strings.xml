@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidApplications</string>
+    <string name="hello_message">Bonjour le monde!</string>
+    <string name="ButtonText">Je suis un bouton</string>
+    <string name="login">Se connecter</string>
+    <string name="login_name">identifiant</string>
+    <string name="name">Nom</string>
+    <string name="password">mot de passe</string>
+    <string name="checkbox">Case à cocher</string>
+    <string name="radio_button">Bouton radio</string>
+    <string name="todo">FAIRE</string>
+    <string name="what_does_this_do">Quest-ce que cela fait ?</string>
+    <string name="send_button">Se connecter</string>
+    <string name="dialog_message">Est-ce que tu veux terminer cette activité ?</string>
+    <string name="dialog_title">Alerte!</string>
+    <string name="ok">Oui</string>
+    <string name="cancel">Non</string>
+    <string name="onSwitch">L\'interrupteur est allumé</string>
+    <string name="offSwitch">L\'interrupteur est éteint</string>
+    <string name="clickedYesToast">L\'utilisateur a cliqué sur OUI</string>
+    <string name="emptyPassword">Le mot de passe ne peut pas être vide</string>
+    <string name="invalidEmail">Le courriel est invalide</string>
+    <string name="welcome">Salut!</string>
+    <string name="chat_button_text">Démarrer la discussion</string>
+    <string name="send_message_hint">Tapez votre message ici</string>
+    <string name="send_message_button">Envoyer</string>
+
+</resources>

@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
     public void clickHandler_chat(View view) {
         //Intent intent = new Intent(MainActivity.this,);
         Log.i(logText, "User clicked Start Chat");
+        Intent intent = new Intent(MainActivity.this, ChatWindow.class);
+        startActivity(intent);
     }
 
 
