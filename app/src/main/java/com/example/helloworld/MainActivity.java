@@ -16,6 +16,14 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
+    /*Button startChatButton = findViewById(R.id.chat_button);
+    startChatButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+        }
+    });*/
+
     String logText = "MainActivity :";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button);
 
         Log.i(logText,"onCreate() encountered.");
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("Response", "My information to share");
+        setResult(Activity.RESULT_OK, intent);
 
     }
 
@@ -40,9 +51,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void clickHandler(View view) {
+    public void clickHandler_hello(View view) {
         Intent intent = new Intent(MainActivity.this,ListItemsActivity.class);
         startActivity(intent);
+    }
+
+    public void clickHandler_chat(View view) {
+        //Intent intent = new Intent(MainActivity.this,);
+        Log.i(logText, "User clicked Start Chat");
     }
 
 

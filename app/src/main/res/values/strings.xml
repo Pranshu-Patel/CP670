@@ -21,6 +21,7 @@
     <string name="emptyPassword">Password cannot be empty</string>
     <string name="invalidEmail">Email is invalid</string>
     <string name="welcome">Welcome!</string>
+    <string name="chat_button_text">Start Chat</string>
 
 
 </resources>
