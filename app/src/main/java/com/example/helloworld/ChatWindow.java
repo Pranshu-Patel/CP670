@@ -70,9 +70,9 @@ public class ChatWindow extends AppCompatActivity {
 
             Log.i(logText, Integer.toString(position));
             if(position%2 == 0)
-                result = inflater.inflate(R.layout.chat_row_incoming, null);
-            else
                 result = inflater.inflate(R.layout.chat_row_outgoing, null);
+            else
+                result = inflater.inflate(R.layout.chat_row_incoming, null);
 
             TextView message = result.findViewById(R.id.message_text);
             message.setText( getItem(position) ); // get the string at position
