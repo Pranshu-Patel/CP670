@@ -19,7 +19,7 @@
         <activity
             android:name=".ChatWindow"
             android:exported="true"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ListItemsActivity"
             android:exported="true"
@@ -36,7 +36,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:parentActivityName=".LoginActivity"/>
+            android:parentActivityName=".LoginActivity" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"

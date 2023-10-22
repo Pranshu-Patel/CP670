@@ -64,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    void onStartButtonClick()
+    {
+        Log.i(logText, "User clicked Start Chat");
+    }
+
     protected void onResume() {
         super.onResume();
         Log.i(logText,"onResume() encountered.");
